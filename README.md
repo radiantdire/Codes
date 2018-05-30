@@ -1,5 +1,3 @@
-Project TrilioVault
-
 Introduction :
 
   This script is used to list the images in a given ceph pool and to delete an image.

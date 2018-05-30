@@ -42,9 +42,13 @@ newl = [(x['name'],x['size']) for x in si]
 for each in newl:
 	image.remove_snap(each[0])
 
-ri.remove(ioctx, inm)
+image.close()
 
-print("removed image")
+try:
+	ri.remove(ioctx, inm)
+	print("removed image")
+except (rbd.ImageBusy):
+	print("Image is busy")
 
 ioctx = cluster.open_ioctx(pool)
 il = ri.list(ioctx)

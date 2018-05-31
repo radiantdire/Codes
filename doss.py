@@ -2,7 +2,6 @@ import rados,rbd
 import prettytable
 from prettytable import PrettyTable
 
-
 def GetHumanReadable(size,precision=2):
         suffixes=['B','KB','MB','GB','TB']
         suffixIndex = 0
